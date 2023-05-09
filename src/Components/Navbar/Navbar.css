@@ -1,0 +1,25 @@
+.root {
+  background-color: #EAEAEA;
+}
+
+.title {
+  flex-grow: 1;
+}
+
+.menuButton {
+  margin-right: 16px;
+}
+
+.drawerList {
+  width: 200px;
+  padding-top: 64px;
+}
+
+.drawerList .MuiListItem-root {
+  padding-left: 32px;
+  transition: background-color 0.3s ease;
+}
+
+.drawerList .MuiListItem-root:hover {
+  background-color: #f0f0f0;
+}
