@@ -1,25 +1,41 @@
+/* Navbar.css */
 .root {
-  background-color: #EAEAEA;
+  display: flex;
+}
+
+.menuButton {
+  margin-right: 1rem;
 }
 
 .title {
   flex-grow: 1;
 }
 
-.menuButton {
-  margin-right: 16px;
+.toolbar {
+  background-color: black;
+}
+
+.navbar-collapse {
+  display: flex;
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  cursor: pointer;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
 }
 
 .drawerList {
-  width: 200px;
-  padding-top: 64px;
-}
-
-.drawerList .MuiListItem-root {
-  padding-left: 32px;
-  transition: background-color 0.3s ease;
-}
-
-.drawerList .MuiListItem-root:hover {
-  background-color: #f0f0f0;
+  width: 250px;
 }

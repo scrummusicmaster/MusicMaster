@@ -1,6 +1,5 @@
 import {
   AppBar,
-  Button,
   Drawer,
   IconButton,
   List,
@@ -10,7 +9,9 @@ import {
   Typography,
 } from "@mui/material";
 import { useState } from "react";
-import "./Navbar.css"
+import { Link } from "react-router-dom";
+
+import "./Navbar.css";
 
 function NavBar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -26,11 +27,7 @@ function NavBar() {
   return (
     <div className="root">
       <AppBar position="static">
-        <Toolbar
-          style={{
-            backgroundColor: "black",
-          }}
-        >
+        <Toolbar className="toolbar">
           <IconButton
             edge="start"
             className="menuButton"
@@ -41,31 +38,57 @@ function NavBar() {
             <span className="material-icons-outlined">menu</span>
           </IconButton>
           <Typography variant="h6" className="title">
-          Music MAster
+            Music Master
           </Typography>
-          <Button color="inherit">Home</Button>
-          <Button color="inherit">Historia</Button>
-          <Button color="inherit">Empleados</Button>
-          <Button color="inherit">Agenda</Button>
-          <Button color="inherit">Tienda</Button>
+          <div className="navbar-collapse">
+            <List className="navbar-nav">
+              <ListItem className="nav-item" onClick={handleDrawerClose}>
+                <Link className="nav-link" to="/Inicio">
+                  Inicio
+                </Link>
+              </ListItem>
+              <ListItem className="nav-item" onClick={handleDrawerClose}>
+                <a className="nav-link" href="#">
+                  Historia
+                </a>
+              </ListItem>
+              <ListItem className="nav-item" onClick={handleDrawerClose}>
+                <a className="nav-link" href="#">
+                  Empleados
+                </a>
+              </ListItem>
+              <ListItem className="nav-item" onClick={handleDrawerClose}>
+                <a className="nav-link" href="#">
+                  Agenda
+                </a>
+              </ListItem>
+              <ListItem className="nav-item" onClick={handleDrawerClose}>
+                <Link className="nav-link" to="/Servicios">
+                  Servicios
+                </Link>
+              </ListItem>
+              <ListItem className="nav-item" onClick={handleDrawerClose}>
+                <a className="nav-link" href="#">
+                  Tienda
+                </a>
+              </ListItem>
+            </List>
+          </div>
         </Toolbar>
       </AppBar>
       <Drawer anchor="left" open={drawerOpen} onClose={handleDrawerClose}>
         <List className="drawerList">
-          <ListItem  onClick={handleDrawerClose}>
+          <ListItem onClick={handleDrawerClose}>
             <ListItemText primary="Home" />
           </ListItem>
-          <ListItem  onClick={handleDrawerClose}>
-            <ListItemText primary="Historia" />
+          <ListItem onClick={handleDrawerClose}>
+            <ListItemText primary="About" />
           </ListItem>
-          <ListItem  onClick={handleDrawerClose}>
-            <ListItemText primary="Empleados" />
+          <ListItem onClick={handleDrawerClose}>
+            <ListItemText primary="Services" />
           </ListItem>
-          <ListItem  onClick={handleDrawerClose}>
-            <ListItemText primary="Agenda" />
-          </ListItem>
-          <ListItem  onClick={handleDrawerClose}>
-            <ListItemText primary="Tienda" />
+          <ListItem onClick={handleDrawerClose}>
+            <ListItemText primary="Contact" />
           </ListItem>
         </List>
       </Drawer>
