@@ -41,12 +41,13 @@ function NavBar() {
             <span className="material-icons-outlined">menu</span>
           </IconButton>
           <Typography variant="h6" className="title">
-            My Website
+          Music MAster
           </Typography>
           <Button color="inherit">Home</Button>
-          <Button color="inherit">About</Button>
-          <Button color="inherit">Services</Button>
-          <Button color="inherit">Contact</Button>
+          <Button color="inherit">Historia</Button>
+          <Button color="inherit">Empleados</Button>
+          <Button color="inherit">Agenda</Button>
+          <Button color="inherit">Tienda</Button>
         </Toolbar>
       </AppBar>
       <Drawer anchor="left" open={drawerOpen} onClose={handleDrawerClose}>
@@ -55,13 +56,16 @@ function NavBar() {
             <ListItemText primary="Home" />
           </ListItem>
           <ListItem  onClick={handleDrawerClose}>
-            <ListItemText primary="About" />
+            <ListItemText primary="Historia" />
           </ListItem>
           <ListItem  onClick={handleDrawerClose}>
-            <ListItemText primary="Services" />
+            <ListItemText primary="Empleados" />
           </ListItem>
           <ListItem  onClick={handleDrawerClose}>
-            <ListItemText primary="Contact" />
+            <ListItemText primary="Agenda" />
+          </ListItem>
+          <ListItem  onClick={handleDrawerClose}>
+            <ListItemText primary="Tienda" />
           </ListItem>
         </List>
       </Drawer>
