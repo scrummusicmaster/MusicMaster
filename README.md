@@ -4,9 +4,8 @@
   <h1 style="font-family: 'Arial Black', sans-serif; font-size: 32px; color: #ff6600;">Tienda de Música</h1>
 </p>
 
-<p align="center">
 ![Tienda de Música](tienda-musica.png)
-</p>
+
 
 ¡Bienvenido(a) al proyecto de la Tienda de Música y Clases de Música! Este repositorio contiene el código fuente de una página web interactiva que ofrece una amplia gama de productos musicales y servicios de enseñanza de música.
 
