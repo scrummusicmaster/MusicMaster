@@ -1,0 +1,41 @@
+/* Navbar.css */
+.root {
+  display: flex;
+}
+
+.menuButton {
+  margin-right: 1rem;
+}
+
+.title {
+  flex-grow: 1;
+}
+
+.toolbar {
+  background-color: black;
+}
+
+.navbar-collapse {
+  display: flex;
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  cursor: pointer;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+}
+
+.drawerList {
+  width: 250px;
+}
