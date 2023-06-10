@@ -1,16 +1,6 @@
-import {
-  AppBar,
-  Drawer,
-  IconButton,
-  List,
-  ListItem,
-  ListItemText,
-  Toolbar,
-  Typography,
-} from "@mui/material";
+import { AppBar, Drawer, IconButton, List, ListItem, ListItemText, Toolbar, Typography } from "@mui/material";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
 import "./Navbar.css";
 
 function NavBar() {
@@ -28,13 +18,7 @@ function NavBar() {
     <div className="root">
       <AppBar position="static">
         <Toolbar className="toolbar">
-          <IconButton
-            edge="start"
-            className="menuButton"
-            color="inherit"
-            aria-label="menu"
-            onClick={handleDrawerOpen}
-          >
+          <IconButton edge="start" className="menuButton" color="inherit" aria-label="menu" onClick={handleDrawerOpen}>
             <span className="material-icons-outlined">menu</span>
           </IconButton>
           <Typography variant="h6" className="title">
@@ -58,9 +42,9 @@ function NavBar() {
                 </a>
               </ListItem>
               <ListItem className="nav-item" onClick={handleDrawerClose}>
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="/Agenda">
                   Agenda
-                </a>
+                </Link>
               </ListItem>
               <ListItem className="nav-item" onClick={handleDrawerClose}>
                 <Link className="nav-link" to="/Servicios">
@@ -78,16 +62,16 @@ function NavBar() {
       </AppBar>
       <Drawer anchor="left" open={drawerOpen} onClose={handleDrawerClose}>
         <List className="drawerList">
-          <ListItem onClick={handleDrawerClose}>
+          <ListItem button onClick={handleDrawerClose}>
             <ListItemText primary="Home" />
           </ListItem>
-          <ListItem onClick={handleDrawerClose}>
+          <ListItem button onClick={handleDrawerClose}>
             <ListItemText primary="About" />
           </ListItem>
-          <ListItem onClick={handleDrawerClose}>
+          <ListItem button onClick={handleDrawerClose}>
             <ListItemText primary="Services" />
           </ListItem>
-          <ListItem onClick={handleDrawerClose}>
+          <ListItem button onClick={handleDrawerClose}>
             <ListItemText primary="Contact" />
           </ListItem>
         </List>
