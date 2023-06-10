@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 import NavBar from "../Navbar/Navbar";
+import "./Form.css"; // Importar archivo de estilos CSS
 
 function Form() {
   const [form, setForm] = useState({
@@ -73,57 +74,57 @@ function Form() {
 
   return (
     <>
-    <NavBar/>
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="nombre"
-        value={form.nombre}
-        onChange={handleInputChange}
-        placeholder="Nombre"
-      />
-      {errors.nombre && <span style={{ color: "red" }}>{errors.nombre}</span>}
+      <NavBar />
+      <form className="form-container" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="nombre"
+          value={form.nombre}
+          onChange={handleInputChange}
+          placeholder="Nombre"
+        />
+        {errors.nombre && <span className="error">{errors.nombre}</span>}
 
-      <input
-        type="email"
-        name="correo"
-        className="form-control"
-        value={form.correo}
-        onChange={handleInputChange}
-        placeholder="Correo"
-      />
-      {errors.correo && <span style={{ color: "red" }}>{errors.correo}</span>}
+        <input
+          type="email"
+          name="correo"
+          className="form-control"
+          value={form.correo}
+          onChange={handleInputChange}
+          placeholder="Correo"
+        />
+        {errors.correo && <span className="error">{errors.correo}</span>}
 
-      <select
-        name="servicio"
-        value={form.servicio}
-        onChange={handleInputChange}
-      >
-        <option value="">Selecciona un servicio</option>
-        <option value="corte">Corte</option>
-        <option value="barba">Barba</option>
-        <option value="corteYBarba">Corte y Barba</option>
-      </select>
-      {errors.servicio && (
-        <span style={{ color: "red" }}>{errors.servicio}</span>
-      )}
+        <select
+          name="servicio"
+          value={form.servicio}
+          onChange={handleInputChange}
+        >
+          <option value="">Selecciona un servicio</option>
+          <option value="corte">Corte</option>
+          <option value="barba">Barba</option>
+          <option value="corteYBarba">Corte y Barba</option>
+        </select>
+        {errors.servicio && <span className="error">{errors.servicio}</span>}
 
-      <select
-        name="horario"
-        value={form.horario}
-        onChange={handleInputChange}
-      >
-        <option value="">Selecciona un horario</option>
-        {horarios.map((horario, index) => (
-          <option key={index} value={horario}>{horario}</option>
-        ))}
-      </select>
-      {errors.horario && <span style={{ color: "red" }}>{errors.horario}</span>}
+        <select
+          name="horario"
+          value={form.horario}
+          onChange={handleInputChange}
+        >
+          <option value="">Selecciona un horario</option>
+          {horarios.map((horario, index) => (
+            <option key={index} value={horario}>
+              {horario}
+            </option>
+          ))}
+        </select>
+        {errors.horario && <span className="error">{errors.horario}</span>}
 
-      <button type="submit">Enviar</button>
-    </form>
+        <button type="submit">Enviar</button>
+      </form>
     </>
   );
 }
 
-export default Form;
+export default Form;
